@@ -24,8 +24,42 @@ namespace ProyectoANF
 
         }
 
-        public void Guardando(List<Catalogo> catalogos)
+        public void Guardando(List<Cuenta> cuentas)
         {
+            int step = 100 / cuentas.Count;
+            pBar_saving.Value = 0;
+
+            foreach(Cuenta cuenta in cuentas)
+            {
+                if (MainF.GetUser().empresa.id == Controller.GetAdminEmpresa().id || MainF.GetUser().empresa.id == Controller.GetCatalogo(cuenta.cuentaId).empresa.id)
+                {
+                    if(!Controller.AddCuenta(cuenta))
+                    {
+                        MessageBox.Show("Error agregando " + cuenta.cuentaId.ToString() + ", se seguira con el resto");
+                    }
+                    lbl_nombre.Text = cuenta.id.ToString();
+                    lbl_cuenta.Text = cuenta.cuentaId.ToString();
+                    lbl_saldo.Text = cuenta.saldo.ToString();
+                    lbl_year.Text = cuenta.year.ToString();
+                    pBar_saving.Value += step;
+
+                }
+                else
+                {
+                    lbl_nombre.Text = cuenta.id.ToString();
+                    lbl_cuenta.Text = cuenta.cuentaId.ToString();
+                    lbl_saldo.Text = cuenta.saldo.ToString();
+                    lbl_year.Text = cuenta.year.ToString();
+                    pBar_saving.Value += step;
+                    MessageBox.Show("Error: La empresa no corresponde a su correspondiente empresa, se omitirá y seguira con el resto");
+                }
+            }
+
+            pBar_saving.Value = 100;
+            MessageBox.Show("Cuentas agregadas");
+            MainF.EndSaveCatalogos();
+            this.Close();
+            /*
             int step = 100 / catalogos.Count;
             pBar_saving.Value = 0;
             foreach (Catalogo catalogo in catalogos)
@@ -58,6 +92,7 @@ namespace ProyectoANF
             MessageBox.Show("Cuentas agregadas");
             MainF.EndSaveCatalogos();
             this.Close();
+            */
         }
 
         private void lbl_empresa_Click(object sender, EventArgs e)

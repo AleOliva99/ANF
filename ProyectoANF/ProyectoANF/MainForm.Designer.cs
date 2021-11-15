@@ -46,6 +46,7 @@ namespace ProyectoANF
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btt_NewCata = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Datos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -174,6 +175,7 @@ namespace ProyectoANF
             this.btt_Load.TabIndex = 10;
             this.btt_Load.Text = "Cargar Datos";
             this.btt_Load.UseVisualStyleBackColor = true;
+            this.btt_Load.Visible = false;
             this.btt_Load.Click += new System.EventHandler(this.btt_Load_Click);
             // 
             // Empresa
@@ -225,11 +227,22 @@ namespace ProyectoANF
             this.Saldo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Saldo.Width = 80;
             // 
+            // btt_NewCata
+            // 
+            this.btt_NewCata.Location = new System.Drawing.Point(176, 401);
+            this.btt_NewCata.Name = "btt_NewCata";
+            this.btt_NewCata.Size = new System.Drawing.Size(132, 23);
+            this.btt_NewCata.TabIndex = 11;
+            this.btt_NewCata.Text = "Nuevo catalogo";
+            this.btt_NewCata.UseVisualStyleBackColor = true;
+            this.btt_NewCata.Click += new System.EventHandler(this.btt_NewCata_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 450);
+            this.Controls.Add(this.btt_NewCata);
             this.Controls.Add(this.btt_Load);
             this.Controls.Add(this.btt_saveData);
             this.Controls.Add(this.groupBox1);
@@ -271,5 +284,6 @@ namespace ProyectoANF
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Año;
         private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
+        private System.Windows.Forms.Button btt_NewCata;
     }
 }

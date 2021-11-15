@@ -1,7 +1,6 @@
 C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\bin\Debug\ProyectoANF.exe.config
 C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\bin\Debug\ProyectoANF.exe
 C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\bin\Debug\ProyectoANF.pdb
-C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.csproj.AssemblyReference.cache
 C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.Form1.resources
 C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.Properties.Resources.resources
 C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.csproj.GenerateResource.cache
@@ -282,3 +281,5 @@ C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\bin\Debug\System.Xm
 C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.exe.config
 C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.AnalisisHorizontal.resources
 C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.GuardandoDatos.resources
+C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.NuevoCatalogo.resources
+C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.csproj.AssemblyReference.cache

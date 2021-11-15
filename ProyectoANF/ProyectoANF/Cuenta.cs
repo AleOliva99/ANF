@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProyectoANF
 {
-    public class Catalogo
+    public class Cuenta
     {
         public int id { get; set; }
-        public Empresa empresa { get; set; }
-        public float cuenta { get; set; }
-        public string nombre { get; set; }
-        
+        public int cuentaId { get; set; }
+        public int year { get; set; }
+        public float saldo { get; set; }
 
     }
 }

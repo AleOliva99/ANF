@@ -116,6 +116,7 @@
     </Compile>
     <Compile Include="Catalogo.cs" />
     <Compile Include="Controller.cs" />
+    <Compile Include="Cuenta.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -141,6 +142,12 @@
     </Compile>
     <Compile Include="NuevaEmpresa.Designer.cs">
       <DependentUpon>NuevaEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoCatalogo.Designer.cs">
+      <DependentUpon>NuevoCatalogo.cs</DependentUpon>
     </Compile>
     <Compile Include="NuevoUsuario.cs">
       <SubType>Form</SubType>
@@ -172,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NuevaEmpresa.resx">
       <DependentUpon>NuevaEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoCatalogo.resx">
+      <DependentUpon>NuevoCatalogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NuevoUsuario.resx">
       <DependentUpon>NuevoUsuario.cs</DependentUpon>

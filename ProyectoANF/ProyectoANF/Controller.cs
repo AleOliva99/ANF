@@ -439,7 +439,7 @@ namespace ProyectoANF
         #endregion
 
         #region CRUD Catalogo
-
+        /*
         private static bool AutentificarCatalogo(Catalogo catalogo)
         {
             if (Conectar())
@@ -713,7 +713,6 @@ namespace ProyectoANF
             }
         }
 
-
         public static Catalogo GetCatalogo(float cuenta)
         {
             string[] cuentaDivision = cuenta.ToString().Split('.');
@@ -750,6 +749,190 @@ namespace ProyectoANF
             else
             {
                 return null;
+            }
+        }
+        */
+        public static bool CreateNewCatalogo(List<Catalogo> catalogos)
+        {
+            if(Conectar())
+            {
+               
+                foreach (Catalogo catalogo in catalogos)
+                {
+                    Conexion.Open();
+                    MySqlCommand comando = new MySqlCommand("INSERT INTO Catalogo(cuentaId, nombre, empresaId) VALUES ("+ catalogo.cuenta +", '"
+                        + catalogo.nombre +"', "+ catalogo.empresa.id +")", Conexion);
+                    MySqlDataReader data = comando.ExecuteReader();
+                    Conexion.Close();
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static Catalogo GetCatalogo(int id)
+        {
+            if(Conectar())
+            {
+                Conexion.Open();
+
+                MySqlCommand comando = new MySqlCommand("SELECT * FROM Catalogo WHERE (id = " + id + ")", Conexion);
+                MySqlDataReader data = comando.ExecuteReader();
+
+                if(data.Read())
+                {
+                    Catalogo catalogo = new Catalogo
+                    {
+                        id = int.Parse(data["id"].ToString()),
+                        cuenta = int.Parse(data["cuentaId"].ToString()),
+                        nombre = data["nombre"].ToString(),
+                        empresa = new Empresa { id = int.Parse(data["empresaId"].ToString()) }
+                    };
+                    Conexion.Close();
+                    catalogo.empresa = GetEmpresa(catalogo.empresa.id);
+                    return catalogo;
+                }
+                else
+                {
+                    Conexion.Close();
+                    return null;
+                }
+
+                Conexion.Close();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static Catalogo GetCatalogo(string name, int empresaId)
+        {
+            if (Conectar())
+            {
+                Conexion.Open();
+
+                MySqlCommand comando = new MySqlCommand("SELECT * FROM Catalogo WHERE (nombre = '" + name.ToUpper() + "' AND empresaId = " + empresaId +")", Conexion);
+                MySqlDataReader data = comando.ExecuteReader();
+
+                if (data.Read())
+                {
+                    Catalogo catalogo = new Catalogo
+                    {
+                        id = int.Parse(data["id"].ToString()),
+                        cuenta = int.Parse(data["cuentaId"].ToString()),
+                        nombre = data["nombre"].ToString(),
+                        empresa = new Empresa { id = int.Parse(data["empresaId"].ToString()) }
+                    };
+                    Conexion.Close();
+                    catalogo.empresa = GetEmpresa(catalogo.empresa.id);
+                    return catalogo;
+                }
+                else
+                {
+                    Conexion.Close();
+                    return null;
+                }
+
+                Conexion.Close();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static bool CatalogoExists(int empresa)
+        {
+            if (Conectar())
+            {
+                Conexion.Open();
+
+                MySqlCommand comando = new MySqlCommand("SELECT * FROM Catalogo WHERE (empresaId = '" + empresa + "')", Conexion);
+                MySqlDataReader data = comando.ExecuteReader();
+
+                if (data.Read())
+                {
+                    
+                    Conexion.Close();
+                    return true;
+                }
+                else
+                {
+                    Conexion.Close();
+                    return false;
+                }
+
+                Conexion.Close();
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static Catalogo GetCatalogo(float cuentaId, int empresaId)
+        {
+            if (Conectar())
+            {
+                Conexion.Open();
+
+                MySqlCommand comando = new MySqlCommand("SELECT * FROM Catalogo WHERE (cuentaId = '" + cuentaId + "' AND empresaId = "+ empresaId +")", Conexion);
+                MySqlDataReader data = comando.ExecuteReader();
+
+                if (data.Read())
+                {
+                    Catalogo catalogo = new Catalogo
+                    {
+                        id = int.Parse(data["id"].ToString()),
+                        cuenta = int.Parse(data["cuentaId"].ToString()),
+                        nombre = data["nombre"].ToString(),
+                        empresa = new Empresa { id = int.Parse(data["empresaId"].ToString()) }
+                    };
+                    Conexion.Close();
+                    catalogo.empresa = GetEmpresa(catalogo.empresa.id);
+                    return catalogo;
+                }
+                else
+                {
+                    Conexion.Close();
+                    return null;
+                }
+
+                Conexion.Close();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static bool AddCuenta(Cuenta cuenta)
+        {
+            if(Conectar())
+            {
+
+
+                Conexion.Open();
+                MySqlCommand comando = new MySqlCommand("INSERT INTO Cuenta(cuenta, anio, saldo) VALUES ("+cuenta.cuentaId+", "+cuenta.year+", "+ cuenta.saldo +")", Conexion);
+                try
+                {
+                    MySqlDataReader data = comando.ExecuteReader();
+                    Conexion.Close();
+                    return true;
+                }
+                catch
+                {
+                    Conexion.Close();
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
             }
         }
 

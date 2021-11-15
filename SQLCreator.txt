@@ -142,3 +142,9 @@ INSERT INTO Cuenta VALUES (8101,'CUENTAS DE ORDEN ACREEDORAS','Cuentas de memora
 INSERT INTO Tipo(tipo, descripción) VALUES ('VRAIN', 'Administradores');
 INSERT INTO Empresa(nombre, tipoId) VALUES('VRAINS', 1);
 INSERT INTO Usuario(username, contrasena, empresaId, permiso, nombre) VALUES('oh18003', 'analisis', 1, 0, 'Alejandro Oliva');
+
+
+INSERT INTO Tipo(tipo, descripción) VALUES ('Textil', 'Pruebas');
+INSERT INTO Empresa(nombre, tipoId) VALUES('Pepsi', 2);
+INSERT INTO Empresa(nombre, tipoId) VALUES('Coca-Cola', 2);.
+INSERT INTO Usuario(username, contrasena, empresaId, permiso, nombre) VALUES('carlitos', 'analisis', 2, 1, 'Carlos');

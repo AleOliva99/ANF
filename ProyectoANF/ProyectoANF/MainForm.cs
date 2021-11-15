@@ -72,18 +72,25 @@ namespace ProyectoANF
         private SelectExcel selec;
         private void btt_Upload_Click(object sender, EventArgs e)
         {
-            try
+            if (Controller.CatalogoExists(Controller.GetEmpresa(cBox_empresa.Text).id))
             {
-                if(selec == null)
+                try
+                {
+                    if (selec == null)
+                        selec = new SelectExcel(this);
+                    selec.Show();
+                }
+                catch
+                {
                     selec = new SelectExcel(this);
-                selec.Show();
+                    selec.Show();
+                }
+                selec.BringToFront();
             }
-            catch
+            else
             {
-                selec = new SelectExcel(this);
-                selec.Show();
+                MessageBox.Show("Antes de importar datos, por favor cree un Catalogo para su empresa");
             }
-            selec.BringToFront();
         }
 
         public void ImportarDatos(string dataFile)
@@ -200,9 +207,59 @@ namespace ProyectoANF
             savingData = null;
         }
 
+        
         private void btt_saveData_Click(object sender, EventArgs e)
         {
-            if(savingData == null)
+            if (savingData == null)
+            {
+                if (DGV_Datos.Rows.Count != 0)
+                {
+                    List<Cuenta> cuentas = new List<Cuenta>();
+                    for (int i = 0; i < DGV_Datos.Rows.Count; i++)
+                    {
+                        try
+                        {
+
+                            float cuentaCode = 0;
+                            int cuentaId = 0;
+                            if (!float.TryParse(DGV_Datos.Rows[i].Cells[1].Value.ToString(), out cuentaCode))
+                            {
+                                cuentaId = Controller.GetCatalogo(DGV_Datos.Rows[i].Cells[1].Value.ToString(), Controller.GetEmpresa(cBox_empresa.Text).id).id;
+                            }
+                            else
+                            {
+                                cuentaId = Controller.GetCatalogo(cuentaCode, Controller.GetEmpresa(cBox_empresa.Text).id).id;
+                            }
+                            cuentas.Add(new Cuenta
+                            {
+                                cuentaId = cuentaId,
+                                year = int.Parse(DGV_Datos.Rows[i].Cells[3].Value.ToString()),
+                                saldo = float.Parse(DGV_Datos.Rows[i].Cells[4].Value.ToString())
+                            });
+                            
+
+                        }
+                        catch(Exception es)
+                        {
+                            MessageBox.Show("Error con la cuenta de nombre " + DGV_Datos.Rows[i].Cells[2].Value.ToString() + "\n" + es.Message);
+                        }
+                    }
+                    savingData = new GuardandoDatos(this);
+                    savingData.Show();
+                    savingData.Guardando(cuentas);
+                }
+                else
+                {
+                    MessageBox.Show("Datos vacios, favor subir datos primero");
+                }
+            }
+            else
+            {
+                savingData.Show();
+                savingData.BringToFront();
+            }
+            /*
+            
             {
                 if (DGV_Datos.Rows.Count != 0)
                 {
@@ -251,16 +308,48 @@ namespace ProyectoANF
                 savingData.Show();
                 savingData.BringToFront();
             }
+            */
         }
 
         private void btt_Load_Click(object sender, EventArgs e)
         {
-            List<ItemExcel> datas = new List<ItemExcel>();
-            foreach (Catalogo catalogo in ((user.empresa.id == Controller.GetAdminEmpresa().id)? Controller.GetCatalogos() : Controller.GetCatalogos(user.empresa.id)))
+            
+        }
+
+        NuevoCatalogo newCata;
+        private void btt_NewCata_Click(object sender, EventArgs e)
+        {
+            if(!Controller.CatalogoExists(Controller.GetEmpresa(cBox_empresa.Text).id))
             {
-                datas.Add(new ItemExcel(catalogo));
+                try
+                {
+                    if (newCata == null)
+                        newCata = new NuevoCatalogo(this);
+                    newCata.Show();
+                }
+                catch
+                {
+                    newCata = new NuevoCatalogo(this);
+                    newCata.Show();
+                }
+                newCata.BringToFront();
             }
-            CargarDatos(datas);
+            else
+            {
+                MessageBox.Show("Ya existe un catalogo para esta empresa, si decide crear otro puede crear conflictos");
+                try
+                {
+                    if (newCata == null)
+                        newCata = new NuevoCatalogo(this);
+                    newCata.Show();
+                }
+                catch
+                {
+                    newCata = new NuevoCatalogo(this);
+                    newCata.Show();
+                }
+                newCata.BringToFront();
+            }
         }
     }
 }
