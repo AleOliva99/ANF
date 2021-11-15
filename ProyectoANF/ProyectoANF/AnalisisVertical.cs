@@ -40,8 +40,8 @@ namespace ProyectoANF
             DGV_Datos.Columns[0].HeaderText = "Cuenta";
             DGV_Datos.Columns[1].HeaderText = anioAnterior.ToString();
             DGV_Datos.Columns[2].HeaderText = anioSiguiente.ToString();
-            DGV_Datos.Columns[3].HeaderText = "Variacion absoluta";
-            DGV_Datos.Columns[4].HeaderText = "Variacion relativa";
+            DGV_Datos.Columns[1].HeaderText = "Analisis " + anioAnterior.ToString();
+            DGV_Datos.Columns[2].HeaderText = "Analisis " + anioSiguiente.ToString();
             for (int i = 0; i < datosAnalisis.Count; i++)
             {
                 float varAbsoluta = datosAnalisis[i].saldoSiguiente - datosAnalisis[i].saldoAnterior;

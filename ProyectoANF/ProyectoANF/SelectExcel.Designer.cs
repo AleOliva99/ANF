@@ -37,9 +37,10 @@ namespace ProyectoANF
             // 
             // btt_create
             // 
-            this.btt_create.Location = new System.Drawing.Point(12, 152);
+            this.btt_create.Location = new System.Drawing.Point(18, 234);
+            this.btt_create.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btt_create.Name = "btt_create";
-            this.btt_create.Size = new System.Drawing.Size(195, 23);
+            this.btt_create.Size = new System.Drawing.Size(292, 35);
             this.btt_create.TabIndex = 0;
             this.btt_create.Text = "Generar plantilla";
             this.btt_create.UseVisualStyleBackColor = true;
@@ -47,9 +48,10 @@ namespace ProyectoANF
             // 
             // btt_Select
             // 
-            this.btt_Select.Location = new System.Drawing.Point(227, 152);
+            this.btt_Select.Location = new System.Drawing.Point(340, 234);
+            this.btt_Select.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btt_Select.Name = "btt_Select";
-            this.btt_Select.Size = new System.Drawing.Size(185, 23);
+            this.btt_Select.Size = new System.Drawing.Size(278, 35);
             this.btt_Select.TabIndex = 1;
             this.btt_Select.Text = "Seleccionar archivo Excel";
             this.btt_Select.UseVisualStyleBackColor = true;
@@ -58,21 +60,24 @@ namespace ProyectoANF
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 31);
+            this.label1.Location = new System.Drawing.Point(18, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(403, 65);
+            this.label1.Size = new System.Drawing.Size(600, 100);
             this.label1.TabIndex = 2;
             this.label1.Text = resources.GetString("label1.Text");
             // 
             // SelectExcel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 214);
+            this.ClientSize = new System.Drawing.Size(636, 329);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btt_Select);
             this.Controls.Add(this.btt_create);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SelectExcel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelectExcel";
             this.ResumeLayout(false);
             this.PerformLayout();
