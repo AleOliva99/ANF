@@ -21,7 +21,7 @@ namespace ProyectoANF
             {
                 try
                 {
-                    Conexion = new MySqlConnection("server=localhost; database=anf; user id=root; password=root");
+                    Conexion = new MySqlConnection("server=localhost; database=anf; user id=root; password=mysql123");
                     //Conexion = new SqlConnection("server=.\\SQLEXPRESS ; database=ANF ; integrated security = true");
                     return true;
                 }
@@ -603,7 +603,8 @@ namespace ProyectoANF
                     {
                         catalogo.empresa = Controller.GetEmpresa(catalogo.empresa.id);
                     }
-                    return Catalogos;                }
+                    return Catalogos;
+                }
                 else
                 {
                     Conexion.Close();
@@ -651,7 +652,8 @@ namespace ProyectoANF
                     {
                         catalogo.empresa = Controller.GetEmpresa(catalogo.empresa.id);
                     }
-                    return Catalogos;                }
+                    return Catalogos;
+                }
                 else
                 {
                     Conexion.Close();
@@ -699,7 +701,8 @@ namespace ProyectoANF
                     {
                         catalogo.empresa = Controller.GetEmpresa(catalogo.empresa.id);
                     }
-                    return Catalogos;                }
+                    return Catalogos;
+                }
                 else
                 {
                     Conexion.Close();

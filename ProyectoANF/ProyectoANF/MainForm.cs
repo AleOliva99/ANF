@@ -197,8 +197,14 @@ namespace ProyectoANF
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AnalisisHorizontal analisisHorizontal = new AnalisisHorizontal(this.datos);
-            analisisHorizontal.ShowDialog();
+            if (this.datos != null)
+            {
+                AnalisisHorizontal analisisHorizontal = new AnalisisHorizontal(this.datos);
+                analisisHorizontal.ShowDialog();
+            } else
+            {
+                MessageBox.Show("Antes de generar el analisis horizontal, favor subir datos");
+            }
         }
 
         private GuardandoDatos savingData;
