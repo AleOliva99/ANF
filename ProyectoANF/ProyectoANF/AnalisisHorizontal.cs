@@ -20,9 +20,10 @@ namespace ProyectoANF
         public class Analisis
         {
 
-            public Analisis(String cuenta, int anioAnterior, int anioSiguiente, float saldoAnterior, float saldoSiguiente)
+            public Analisis(String cuenta, String nombre, int anioAnterior, int anioSiguiente, float saldoAnterior, float saldoSiguiente)
             {
                 this.cuenta = cuenta;
+                this.nombre = nombre;
                 this.anioAnterior = anioAnterior;
                 this.anioSiguiente = anioSiguiente;
                 this.saldoAnterior = saldoAnterior;
@@ -30,6 +31,7 @@ namespace ProyectoANF
             }
 
             public string cuenta { get; set; }
+            public string nombre { get; set; }
             public int anioAnterior { get; set; }
             public int anioSiguiente { get; set; }
             public float saldoAnterior { get; set; }
@@ -52,24 +54,27 @@ namespace ProyectoANF
                 saldo = saldo.OrderByDescending(j => j.year).ToList();
                 anioAnterior = saldo[1].year;
                 anioSiguiente = saldo[0].year;
-                Analisis analisis = new Analisis(saldo[0].cuenta, saldo[1].year, saldo[0].year, saldo[1].saldo, saldo[0].saldo);
+                Analisis analisis = new Analisis(saldo[0].cuenta, saldo[0].nombre, saldo[1].year, saldo[0].year, saldo[1].saldo, saldo[0].saldo);
                 this.datosAnalisis.Add(analisis);
             }            
 
             DGV_Datos.Rows.Clear();
-            DGV_Datos.Columns[1].HeaderText = anioAnterior.ToString();
-            DGV_Datos.Columns[2].HeaderText = anioSiguiente.ToString();
-            DGV_Datos.Columns[3].HeaderText = "Variacion absoluta";
-            DGV_Datos.Columns[4].HeaderText = "Variacion relativa";
+            DGV_Datos.Columns[0].HeaderText = "Cuenta";
+            DGV_Datos.Columns[1].HeaderText = "Nombre";
+            DGV_Datos.Columns[2].HeaderText = anioAnterior.ToString();
+            DGV_Datos.Columns[3].HeaderText = anioSiguiente.ToString();
+            DGV_Datos.Columns[4].HeaderText = "Variacion absoluta";
+            DGV_Datos.Columns[5].HeaderText = "Variacion relativa";
             for (int i = 0; i < datosAnalisis.Count; i++)
             {
                 float varAbsoluta = datosAnalisis[i].saldoSiguiente - datosAnalisis[i].saldoAnterior;
                 DGV_Datos.Rows.Add(new DataGridViewRow());
                 DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[0].Value = datosAnalisis[i].cuenta;
-                DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[1].Value = "$" + datosAnalisis[i].saldoAnterior;
-                DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[2].Value = "$" + datosAnalisis[i].saldoSiguiente;
-                DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[3].Value = "$" + varAbsoluta;
-                DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[4].Value = varAbsoluta / datosAnalisis[i].saldoAnterior;
+                DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[1].Value = datosAnalisis[i].nombre;
+                DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[2].Value = "$" + datosAnalisis[i].saldoAnterior;
+                DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[3].Value = "$" + datosAnalisis[i].saldoSiguiente;
+                DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[4].Value = "$" + varAbsoluta;
+                DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[5].Value = varAbsoluta / datosAnalisis[i].saldoAnterior;
             }
         }           
             

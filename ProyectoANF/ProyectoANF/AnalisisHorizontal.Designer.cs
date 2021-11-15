@@ -36,6 +36,7 @@ namespace ProyectoANF
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Variacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Datos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@ namespace ProyectoANF
             this.Cuentta,
             this.Nombre,
             this.Año,
-            this.Saldo});
+            this.Saldo,
+            this.Variacion});
             this.DGV_Datos.Location = new System.Drawing.Point(26, 85);
             this.DGV_Datos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DGV_Datos.Name = "DGV_Datos";
@@ -108,6 +110,14 @@ namespace ProyectoANF
             this.Saldo.ReadOnly = true;
             this.Saldo.Width = 150;
             // 
+            // Variacion
+            // 
+            this.Variacion.HeaderText = "Variacion";
+            this.Variacion.MinimumWidth = 8;
+            this.Variacion.Name = "Variacion";
+            this.Variacion.ReadOnly = true;
+            this.Variacion.Width = 150;
+            // 
             // AnalisisHorizontal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -135,5 +145,6 @@ namespace ProyectoANF
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Año;
         private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Variacion;
     }
 }
