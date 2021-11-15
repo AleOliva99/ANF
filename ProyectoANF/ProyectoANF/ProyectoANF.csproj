@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analisis.cs" />
     <Compile Include="AnalisisHorizontal.cs">
       <SubType>Form</SubType>
     </Compile>
