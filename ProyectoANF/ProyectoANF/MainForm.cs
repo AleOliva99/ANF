@@ -15,6 +15,7 @@ namespace ProyectoANF
     {
         private Usuario user;
         private List<Empresa> empresas;
+        private List<ItemExcel> datos;
         public MainForm(Usuario usuario, Form1 login)
         {
             InitializeComponent();
@@ -66,15 +67,6 @@ namespace ProyectoANF
             }
         }
 
-        [System.Serializable]
-        public class ItemExcel
-        {
-            public string empresa { get; set; }
-            public string cuenta { get; set; }
-            public string nombre { get; set; }
-            public int year { get; set; }
-            public float saldo { get; set; }
-        }
         private SelectExcel selec;
         private void btt_Upload_Click(object sender, EventArgs e)
         {
@@ -104,7 +96,7 @@ namespace ProyectoANF
                 int row = 2;
 
                 //SL.GetCellValueAsString(0, 0);
-                List<ItemExcel> datos = new List<ItemExcel>();
+                this.datos = new List<ItemExcel>();
 
                 while (!string.IsNullOrWhiteSpace(SL.GetCellValueAsString(row, column)))
                 {
@@ -187,6 +179,12 @@ namespace ProyectoANF
                 nuevaEmpresa.Show();
             }
             nuevaEmpresa.BringToFront();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AnalisisHorizontal analisisHorizontal = new AnalisisHorizontal(this.datos);
+            analisisHorizontal.ShowDialog();
         }
     }
 }

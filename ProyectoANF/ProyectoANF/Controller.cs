@@ -21,7 +21,7 @@ namespace ProyectoANF
             {
                 try
                 {
-                    Conexion  = new MySqlConnection("server=localhost; database=anf; user id=root; password=root");   
+                    Conexion  = new MySqlConnection("server=localhost; database=anf; user id=root; password=mysql123");   
                     //Conexion = new SqlConnection("server=.\\SQLEXPRESS ; database=ANF ; integrated security = true");
                     return true;
                 }
