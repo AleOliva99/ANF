@@ -33,6 +33,10 @@ namespace ProyectoANF
                 DataTable tabla = new DataTable();
                 tabla.Columns.Add("Codigo", typeof(string));
                 tabla.Columns.Add("Nombre", typeof(string));
+
+                tabla.Rows.Add();
+                tabla.Rows[tabla.Rows.Count - 1].ItemArray[1] = "ACTIVOS";
+
                 archivo.ImportDataTable(1, 1, tabla, true);
                 bool cop = false;
                 while (cop == false)

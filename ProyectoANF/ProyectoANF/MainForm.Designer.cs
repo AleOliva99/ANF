@@ -47,6 +47,7 @@ namespace ProyectoANF
             this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btt_NewCata = new System.Windows.Forms.Button();
+            this.btt_Razones = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Datos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -135,6 +136,7 @@ namespace ProyectoANF
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btt_Razones);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btt_Upload);
             this.groupBox1.Location = new System.Drawing.Point(8, 97);
@@ -237,6 +239,17 @@ namespace ProyectoANF
             this.btt_NewCata.UseVisualStyleBackColor = true;
             this.btt_NewCata.Click += new System.EventHandler(this.btt_NewCata_Click);
             // 
+            // btt_Razones
+            // 
+            this.btt_Razones.Location = new System.Drawing.Point(14, 111);
+            this.btt_Razones.Margin = new System.Windows.Forms.Padding(2);
+            this.btt_Razones.Name = "btt_Razones";
+            this.btt_Razones.Size = new System.Drawing.Size(124, 25);
+            this.btt_Razones.TabIndex = 6;
+            this.btt_Razones.Text = "Razones";
+            this.btt_Razones.UseVisualStyleBackColor = true;
+            this.btt_Razones.Click += new System.EventHandler(this.btt_Razones_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,5 +298,6 @@ namespace ProyectoANF
         private System.Windows.Forms.DataGridViewTextBoxColumn Año;
         private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
         private System.Windows.Forms.Button btt_NewCata;
+        private System.Windows.Forms.Button btt_Razones;
     }
 }

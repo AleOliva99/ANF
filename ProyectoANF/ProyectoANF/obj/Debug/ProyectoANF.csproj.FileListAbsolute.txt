@@ -283,3 +283,4 @@ C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoA
 C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.GuardandoDatos.resources
 C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.NuevoCatalogo.resources
 C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.csproj.AssemblyReference.cache
+C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.Razones.resources

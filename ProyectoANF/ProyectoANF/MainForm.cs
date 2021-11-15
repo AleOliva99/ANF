@@ -351,5 +351,22 @@ namespace ProyectoANF
                 newCata.BringToFront();
             }
         }
+
+        Razones razones;
+        private void btt_Razones_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (razones == null)
+                    razones = new Razones(this);
+                razones.Show();
+            }
+            catch
+            {
+                razones = new Razones(this);
+                razones.Show();
+            }
+            razones.BringToFront();
+        }
     }
 }

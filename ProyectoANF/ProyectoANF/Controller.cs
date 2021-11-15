@@ -777,8 +777,15 @@ namespace ProyectoANF
         {
             if(Conectar())
             {
-                Conexion.Open();
-
+                try
+                {
+                    Conexion.Open();
+                }
+                catch
+                {
+                    Conexion.Close();
+                    Conexion.Open();
+                }
                 MySqlCommand comando = new MySqlCommand("SELECT * FROM Catalogo WHERE (id = " + id + ")", Conexion);
                 MySqlDataReader data = comando.ExecuteReader();
 
@@ -798,14 +805,20 @@ namespace ProyectoANF
                 else
                 {
                     Conexion.Close();
-                    return null;
+                    return new Catalogo
+                    {
+                        id = -1
+                    };
                 }
 
                 Conexion.Close();
             }
             else
             {
-                return null;
+                return new Catalogo
+                {
+                    id = -1
+                };
             }
         }
 
@@ -834,14 +847,20 @@ namespace ProyectoANF
                 else
                 {
                     Conexion.Close();
-                    return null;
+                    return new Catalogo
+                    {
+                        id = -1
+                    };
                 }
 
                 Conexion.Close();
             }
             else
             {
-                return null;
+                return new Catalogo
+                {
+                    id = -1
+                };
             }
         }
 
@@ -933,6 +952,96 @@ namespace ProyectoANF
             else
             {
                 return false;
+            }
+        }
+
+        public static Cuenta GetCuenta(string nombre, int year, Empresa empresa)
+        {
+            if (Conectar())
+            {
+                try
+                {
+                    int catag = GetCatalogo(nombre.ToUpper(), empresa.id).id;
+
+                    Conexion.Open();
+
+                    MySqlCommand comando = new MySqlCommand("SELECT * FROM Cuenta WHERE (cuenta = " + catag + " AND anio = " + year + ")", Conexion);
+                    MySqlDataReader data = comando.ExecuteReader();
+
+                    if (data.Read())
+                    {
+                        Cuenta cuenta = new Cuenta
+                        {
+                            id = int.Parse(data["id"].ToString()),
+                            cuentaId = int.Parse(data["cuenta"].ToString()),
+                            year = int.Parse(data["anio"].ToString()),
+                            saldo = float.Parse(data["saldo"].ToString())
+                        };
+                        Conexion.Close();
+                        return cuenta;
+                    }
+                    else
+                    {
+                        Conexion.Close();
+                        return new Cuenta
+                        {
+                            id = -1,
+                            cuentaId = -1,
+                            year = year,
+                            saldo = 0
+                        };
+                    }
+                }
+                catch
+                {
+                    return new Cuenta
+                    {
+                        id = -1,
+                        cuentaId = -1,
+                        year = year,
+                        saldo = 0
+                    };
+                }
+
+                Conexion.Close();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        #endregion
+
+        #region CRUD comportamiento
+
+        public static string GetResultado(float A, float B)
+        {
+            if(Conectar())
+            {
+                Conexion.Open();
+
+                int caso = 0;
+                if ((A - B) > 0)
+                    caso = 1;
+                else if ((A - B) < 0)
+                    caso = 2;
+                else if((A - B) == 0)
+                    caso = 3;
+                string res = string.Empty;
+                MySqlCommand comando = new MySqlCommand("SELECT * FROM comportamiento WHERE id = " + caso, Conexion);
+                MySqlDataReader data = comando.ExecuteReader();
+                if(data.Read())
+                {
+                    res = data["mensaje"].ToString();
+                }
+
+                Conexion.Close();
+                return res;
+            }
+            else
+            {
+                return "No hay conexion con la BD";
             }
         }
 
