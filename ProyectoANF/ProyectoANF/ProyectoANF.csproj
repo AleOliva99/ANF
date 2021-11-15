@@ -115,6 +115,12 @@
     <Compile Include="AnalisisHorizontal.Designer.cs">
       <DependentUpon>AnalisisHorizontal.cs</DependentUpon>
     </Compile>
+    <Compile Include="AnalisisVertical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalisisVertical.Designer.cs">
+      <DependentUpon>AnalisisVertical.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="Form1.cs">
@@ -154,6 +160,9 @@
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="AnalisisHorizontal.resx">
       <DependentUpon>AnalisisHorizontal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalisisVertical.resx">
+      <DependentUpon>AnalisisVertical.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

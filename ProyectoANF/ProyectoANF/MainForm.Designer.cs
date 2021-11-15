@@ -44,6 +44,7 @@ namespace ProyectoANF
             this.btt_newEmprise = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Datos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -185,11 +186,12 @@ namespace ProyectoANF
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btt_Upload);
             this.groupBox1.Location = new System.Drawing.Point(12, 149);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(229, 215);
+            this.groupBox1.Size = new System.Drawing.Size(229, 286);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones";
@@ -203,6 +205,16 @@ namespace ProyectoANF
             this.button1.Text = "Analisis Horizontal";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(21, 122);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(186, 38);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Analisis Vertical";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainForm
             // 
@@ -247,5 +259,6 @@ namespace ProyectoANF
         private System.Windows.Forms.Button btt_newEmprise;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

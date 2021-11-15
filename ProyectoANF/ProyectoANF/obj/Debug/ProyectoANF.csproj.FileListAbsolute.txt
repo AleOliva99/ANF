@@ -183,3 +183,4 @@ C:\Users\gabri\Desktop\UES\ANF\PROYECTO\proyecto-anf\ProyectoANF\ProyectoANF\obj
 C:\Users\gabri\Desktop\UES\ANF\PROYECTO\proyecto-anf\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.exe
 C:\Users\gabri\Desktop\UES\ANF\PROYECTO\proyecto-anf\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.pdb
 C:\Users\gabri\Desktop\UES\ANF\PROYECTO\proyecto-anf\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.AnalisisHorizontal.resources
+C:\Users\gabri\Desktop\UES\ANF\PROYECTO\proyecto-anf\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.AnalisisVertical.resources

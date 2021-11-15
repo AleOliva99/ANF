@@ -186,5 +186,11 @@ namespace ProyectoANF
             AnalisisHorizontal analisisHorizontal = new AnalisisHorizontal(this.datos);
             analisisHorizontal.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AnalisisVertical analisisVertical = new AnalisisVertical(this.datos);
+            analisisVertical.ShowDialog();
+        }
     }
 }
