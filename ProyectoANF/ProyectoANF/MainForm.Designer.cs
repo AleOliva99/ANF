@@ -35,15 +35,17 @@ namespace ProyectoANF
             this.tBox_usuario = new System.Windows.Forms.TextBox();
             this.btt_Upload = new System.Windows.Forms.Button();
             this.DGV_Datos = new System.Windows.Forms.DataGridView();
+            this.btt_newUser = new System.Windows.Forms.Button();
+            this.btt_newEmprise = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btt_saveData = new System.Windows.Forms.Button();
+            this.btt_Load = new System.Windows.Forms.Button();
             this.Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cuentta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btt_newUser = new System.Windows.Forms.Button();
-            this.btt_newEmprise = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Datos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -51,47 +53,42 @@ namespace ProyectoANF
             // cBox_empresa
             // 
             this.cBox_empresa.FormattingEnabled = true;
-            this.cBox_empresa.Location = new System.Drawing.Point(126, 28);
-            this.cBox_empresa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cBox_empresa.Location = new System.Drawing.Point(84, 18);
             this.cBox_empresa.Name = "cBox_empresa";
-            this.cBox_empresa.Size = new System.Drawing.Size(304, 28);
+            this.cBox_empresa.Size = new System.Drawing.Size(204, 21);
             this.cBox_empresa.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 29);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(30, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 20);
+            this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Empresa";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(498, 29);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(332, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Usuario";
             // 
             // tBox_usuario
             // 
-            this.tBox_usuario.Location = new System.Drawing.Point(573, 29);
-            this.tBox_usuario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tBox_usuario.Location = new System.Drawing.Point(382, 19);
             this.tBox_usuario.Name = "tBox_usuario";
             this.tBox_usuario.ReadOnly = true;
-            this.tBox_usuario.Size = new System.Drawing.Size(330, 26);
+            this.tBox_usuario.Size = new System.Drawing.Size(221, 20);
             this.tBox_usuario.TabIndex = 3;
             // 
             // btt_Upload
             // 
-            this.btt_Upload.Location = new System.Drawing.Point(21, 31);
-            this.btt_Upload.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btt_Upload.Location = new System.Drawing.Point(14, 20);
             this.btt_Upload.Name = "btt_Upload";
-            this.btt_Upload.Size = new System.Drawing.Size(186, 35);
+            this.btt_Upload.Size = new System.Drawing.Size(124, 23);
             this.btt_Upload.TabIndex = 4;
             this.btt_Upload.Text = "Subir datos";
             this.btt_Upload.UseVisualStyleBackColor = true;
@@ -108,65 +105,18 @@ namespace ProyectoANF
             this.Nombre,
             this.Año,
             this.Saldo});
-            this.DGV_Datos.Location = new System.Drawing.Point(264, 149);
-            this.DGV_Datos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DGV_Datos.Location = new System.Drawing.Point(176, 97);
             this.DGV_Datos.Name = "DGV_Datos";
             this.DGV_Datos.ReadOnly = true;
             this.DGV_Datos.RowHeadersWidth = 62;
-            this.DGV_Datos.Size = new System.Drawing.Size(800, 458);
+            this.DGV_Datos.Size = new System.Drawing.Size(533, 298);
             this.DGV_Datos.TabIndex = 5;
-            // 
-            // Empresa
-            // 
-            this.Empresa.Frozen = true;
-            this.Empresa.HeaderText = "Empresa";
-            this.Empresa.MinimumWidth = 8;
-            this.Empresa.Name = "Empresa";
-            this.Empresa.ReadOnly = true;
-            this.Empresa.Width = 150;
-            // 
-            // Cuentta
-            // 
-            this.Cuentta.Frozen = true;
-            this.Cuentta.HeaderText = "Cuenta";
-            this.Cuentta.MinimumWidth = 8;
-            this.Cuentta.Name = "Cuentta";
-            this.Cuentta.ReadOnly = true;
-            this.Cuentta.Width = 150;
-            // 
-            // Nombre
-            // 
-            this.Nombre.Frozen = true;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 8;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 150;
-            // 
-            // Año
-            // 
-            this.Año.Frozen = true;
-            this.Año.HeaderText = "Año";
-            this.Año.MinimumWidth = 8;
-            this.Año.Name = "Año";
-            this.Año.ReadOnly = true;
-            this.Año.Width = 150;
-            // 
-            // Saldo
-            // 
-            this.Saldo.Frozen = true;
-            this.Saldo.HeaderText = "Saldo";
-            this.Saldo.MinimumWidth = 8;
-            this.Saldo.Name = "Saldo";
-            this.Saldo.ReadOnly = true;
-            this.Saldo.Width = 150;
             // 
             // btt_newUser
             // 
-            this.btt_newUser.Location = new System.Drawing.Point(936, 28);
-            this.btt_newUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btt_newUser.Location = new System.Drawing.Point(624, 18);
             this.btt_newUser.Name = "btt_newUser";
-            this.btt_newUser.Size = new System.Drawing.Size(112, 66);
+            this.btt_newUser.Size = new System.Drawing.Size(75, 43);
             this.btt_newUser.TabIndex = 6;
             this.btt_newUser.Text = "Nuevo Usuario";
             this.btt_newUser.UseVisualStyleBackColor = true;
@@ -174,10 +124,9 @@ namespace ProyectoANF
             // 
             // btt_newEmprise
             // 
-            this.btt_newEmprise.Location = new System.Drawing.Point(256, 69);
-            this.btt_newEmprise.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btt_newEmprise.Location = new System.Drawing.Point(171, 45);
             this.btt_newEmprise.Name = "btt_newEmprise";
-            this.btt_newEmprise.Size = new System.Drawing.Size(176, 35);
+            this.btt_newEmprise.Size = new System.Drawing.Size(117, 23);
             this.btt_newEmprise.TabIndex = 7;
             this.btt_newEmprise.Text = "Nueva Empresa";
             this.btt_newEmprise.UseVisualStyleBackColor = true;
@@ -187,28 +136,102 @@ namespace ProyectoANF
             // 
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btt_Upload);
-            this.groupBox1.Location = new System.Drawing.Point(12, 149);
+            this.groupBox1.Location = new System.Drawing.Point(8, 97);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(229, 215);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(153, 140);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(21, 75);
+            this.button1.Location = new System.Drawing.Point(14, 49);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(186, 38);
+            this.button1.Size = new System.Drawing.Size(124, 25);
             this.button1.TabIndex = 5;
             this.button1.Text = "Analisis Horizontal";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btt_saveData
+            // 
+            this.btt_saveData.Location = new System.Drawing.Point(600, 401);
+            this.btt_saveData.Name = "btt_saveData";
+            this.btt_saveData.Size = new System.Drawing.Size(109, 23);
+            this.btt_saveData.TabIndex = 9;
+            this.btt_saveData.Text = "Guardar datos";
+            this.btt_saveData.UseVisualStyleBackColor = true;
+            this.btt_saveData.Click += new System.EventHandler(this.btt_saveData_Click);
+            // 
+            // btt_Load
+            // 
+            this.btt_Load.Location = new System.Drawing.Point(480, 401);
+            this.btt_Load.Name = "btt_Load";
+            this.btt_Load.Size = new System.Drawing.Size(114, 23);
+            this.btt_Load.TabIndex = 10;
+            this.btt_Load.Text = "Cargar Datos";
+            this.btt_Load.UseVisualStyleBackColor = true;
+            this.btt_Load.Click += new System.EventHandler(this.btt_Load_Click);
+            // 
+            // Empresa
+            // 
+            this.Empresa.Frozen = true;
+            this.Empresa.HeaderText = "Empresa";
+            this.Empresa.MinimumWidth = 8;
+            this.Empresa.Name = "Empresa";
+            this.Empresa.ReadOnly = true;
+            this.Empresa.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Cuentta
+            // 
+            this.Cuentta.Frozen = true;
+            this.Cuentta.HeaderText = "Cuenta";
+            this.Cuentta.MinimumWidth = 8;
+            this.Cuentta.Name = "Cuentta";
+            this.Cuentta.ReadOnly = true;
+            this.Cuentta.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Cuentta.Width = 60;
+            // 
+            // Nombre
+            // 
+            this.Nombre.Frozen = true;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 8;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Nombre.Width = 150;
+            // 
+            // Año
+            // 
+            this.Año.Frozen = true;
+            this.Año.HeaderText = "Año";
+            this.Año.MinimumWidth = 8;
+            this.Año.Name = "Año";
+            this.Año.ReadOnly = true;
+            this.Año.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Año.Width = 80;
+            // 
+            // Saldo
+            // 
+            this.Saldo.Frozen = true;
+            this.Saldo.HeaderText = "Saldo";
+            this.Saldo.MinimumWidth = 8;
+            this.Saldo.Name = "Saldo";
+            this.Saldo.ReadOnly = true;
+            this.Saldo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Saldo.Width = 80;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 692);
+            this.ClientSize = new System.Drawing.Size(741, 450);
+            this.Controls.Add(this.btt_Load);
+            this.Controls.Add(this.btt_saveData);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btt_newEmprise);
             this.Controls.Add(this.btt_newUser);
@@ -217,7 +240,6 @@ namespace ProyectoANF
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cBox_empresa);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
@@ -238,14 +260,16 @@ namespace ProyectoANF
         private System.Windows.Forms.TextBox tBox_usuario;
         private System.Windows.Forms.Button btt_Upload;
         private System.Windows.Forms.DataGridView DGV_Datos;
+        private System.Windows.Forms.Button btt_newUser;
+        private System.Windows.Forms.Button btt_newEmprise;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btt_saveData;
+        private System.Windows.Forms.Button btt_Load;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuentta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Año;
         private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
-        private System.Windows.Forms.Button btt_newUser;
-        private System.Windows.Forms.Button btt_newEmprise;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
     }
 }

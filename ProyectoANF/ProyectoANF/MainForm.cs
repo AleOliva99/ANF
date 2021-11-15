@@ -23,6 +23,8 @@ namespace ProyectoANF
             Login = login;
         }
 
+        public Usuario GetUser() { return user; }
+
         private Form1 Login;
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -120,22 +122,27 @@ namespace ProyectoANF
                     row++;
                 }
                 //datos.Remove(datos[datos.Count - 1]);
-                DGV_Datos.Rows.Clear();
-                for (int i = 0; i < datos.Count; i++)
-                {
-                    DGV_Datos.Rows.Add(new DataGridViewRow());
-                    DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[0].Value = datos[i].empresa;
-                    DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[1].Value = datos[i].cuenta;
-                    DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[2].Value = datos[i].nombre;
-                    DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[3].Value = datos[i].year;
-                    DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[4].Value = datos[i].saldo;
-                }
+                CargarDatos(this.datos);
                 MessageBox.Show("Importación terminada");
                 selec = null;
             }
             catch (SystemException err)
             {
                 MessageBox.Show(err.ToString());
+            }
+        }
+
+        private void CargarDatos(List<ItemExcel> datas)
+        {
+            DGV_Datos.Rows.Clear();
+            for (int i = 0; i < datas.Count; i++)
+            {
+                DGV_Datos.Rows.Add(new DataGridViewRow());
+                DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[0].Value = datas[i].empresa;
+                DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[1].Value = datas[i].cuenta;
+                DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[2].Value = datas[i].nombre;
+                DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[3].Value = datas[i].year;
+                DGV_Datos.Rows[DGV_Datos.Rows.Count - 1].Cells[4].Value = datas[i].saldo;
             }
         }
 
@@ -185,6 +192,75 @@ namespace ProyectoANF
         {
             AnalisisHorizontal analisisHorizontal = new AnalisisHorizontal(this.datos);
             analisisHorizontal.ShowDialog();
+        }
+
+        private GuardandoDatos savingData;
+        public void EndSaveCatalogos()
+        {
+            savingData = null;
+        }
+
+        private void btt_saveData_Click(object sender, EventArgs e)
+        {
+            if(savingData == null)
+            {
+                if (DGV_Datos.Rows.Count != 0)
+                {
+
+                    List<Catalogo> catalogos = new List<Catalogo>();
+                    for (int i = 0; i < DGV_Datos.Rows.Count; i++)
+                    {
+                        try
+                        {
+                            int cuentaN = 0;
+                            if (!int.TryParse(DGV_Datos.Rows[i].Cells[1].Value.ToString(), out cuentaN))
+                            {
+                                cuentaN = Controller.GetCatalogoByName(DGV_Datos.Rows[i].Cells[1].Value.ToString());
+                            }
+                            Catalogo catalogoNew = new Catalogo
+                            {
+                                id = -1,
+                                empresa = ((int.TryParse(DGV_Datos.Rows[i].Cells[0].Value.ToString(), out int empresId)) ?
+                                Controller.GetEmpresa(empresId) : Controller.GetEmpresa(DGV_Datos.Rows[i].Cells[0].Value.ToString())),
+                                cuenta = cuentaN,
+                                cuentaEspecifica = -1,
+                                nombre = DGV_Datos.Rows[i].Cells[2].Value.ToString(),
+                                year = int.Parse(DGV_Datos.Rows[i].Cells[3].Value.ToString()),
+                                saldo = float.Parse(DGV_Datos.Rows[i].Cells[4].Value.ToString())
+                            };
+                            catalogoNew.cuentaEspecifica = Controller.NextCatalogo(catalogoNew);
+                            catalogos.Add(catalogoNew);
+                        }
+                        catch (System.Exception es)
+                        {
+                            MessageBox.Show("Error con la cuenta de nombre " + DGV_Datos.Rows[i].Cells[2].Value.ToString() + "\n" + es.Message);
+                        }
+
+                    }
+                    savingData = new GuardandoDatos(this);
+                    savingData.Show();
+                    savingData.Guardando(catalogos);
+                }
+                else
+                {
+                    MessageBox.Show("Datos vacios, favor subir datos primero");
+                }
+            }
+            else
+            {
+                savingData.Show();
+                savingData.BringToFront();
+            }
+        }
+
+        private void btt_Load_Click(object sender, EventArgs e)
+        {
+            List<ItemExcel> datas = new List<ItemExcel>();
+            foreach (Catalogo catalogo in ((user.empresa.id == Controller.GetAdminEmpresa().id)? Controller.GetCatalogos() : Controller.GetCatalogos(user.empresa.id)))
+            {
+                datas.Add(new ItemExcel(catalogo));
+            }
+            CargarDatos(datas);
         }
     }
 }

@@ -15,5 +15,16 @@ namespace ProyectoANF
         public string nombre { get; set; }
         public int year { get; set; }
         public float saldo { get; set; }
+
+        public ItemExcel() { }
+
+        public ItemExcel(Catalogo catalogo)
+        {
+            this.empresa = catalogo.empresa.nombre;
+            this.cuenta = catalogo.cuenta.ToString();
+            this.nombre = catalogo.nombre;
+            this.year = catalogo.year;
+            this.saldo = catalogo.saldo;
+        }
     }
 }
