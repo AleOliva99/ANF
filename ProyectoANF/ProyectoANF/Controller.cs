@@ -1011,6 +1011,60 @@ namespace ProyectoANF
             }
         }
 
+        public static Cuenta GetCuenta(int catalogo, int year)
+        {
+            if (Conectar())
+            {
+                try
+                {
+
+                    Conexion.Open();
+
+                    MySqlCommand comando = new MySqlCommand("SELECT * FROM Cuenta WHERE (cuenta = " + catalogo + " AND anio = " + year + ")", Conexion);
+                    MySqlDataReader data = comando.ExecuteReader();
+
+                    if (data.Read())
+                    {
+                        Cuenta cuenta = new Cuenta
+                        {
+                            id = int.Parse(data["id"].ToString()),
+                            cuentaId = int.Parse(data["cuenta"].ToString()),
+                            year = int.Parse(data["anio"].ToString()),
+                            saldo = float.Parse(data["saldo"].ToString())
+                        };
+                        Conexion.Close();
+                        return cuenta;
+                    }
+                    else
+                    {
+                        Conexion.Close();
+                        return new Cuenta
+                        {
+                            id = -1,
+                            cuentaId = -1,
+                            year = year,
+                            saldo = 0
+                        };
+                    }
+                }
+                catch
+                {
+                    return new Cuenta
+                    {
+                        id = -1,
+                        cuentaId = -1,
+                        year = year,
+                        saldo = 0
+                    };
+                }
+
+                Conexion.Close();
+            }
+            else
+            {
+                return null;
+            }
+        }
         #endregion
 
         #region CRUD comportamiento

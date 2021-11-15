@@ -41,13 +41,14 @@ namespace ProyectoANF
             this.button1 = new System.Windows.Forms.Button();
             this.btt_saveData = new System.Windows.Forms.Button();
             this.btt_Load = new System.Windows.Forms.Button();
+            this.btt_NewCata = new System.Windows.Forms.Button();
+            this.btt_Razones = new System.Windows.Forms.Button();
+            this.btt_graficar = new System.Windows.Forms.Button();
             this.Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cuentta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btt_NewCata = new System.Windows.Forms.Button();
-            this.btt_Razones = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Datos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -136,6 +137,7 @@ namespace ProyectoANF
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btt_graficar);
             this.groupBox1.Controls.Add(this.btt_Razones);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btt_Upload);
@@ -143,7 +145,7 @@ namespace ProyectoANF
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(153, 140);
+            this.groupBox1.Size = new System.Drawing.Size(153, 179);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones";
@@ -180,55 +182,6 @@ namespace ProyectoANF
             this.btt_Load.Visible = false;
             this.btt_Load.Click += new System.EventHandler(this.btt_Load_Click);
             // 
-            // Empresa
-            // 
-            this.Empresa.Frozen = true;
-            this.Empresa.HeaderText = "Empresa";
-            this.Empresa.MinimumWidth = 8;
-            this.Empresa.Name = "Empresa";
-            this.Empresa.ReadOnly = true;
-            this.Empresa.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Cuentta
-            // 
-            this.Cuentta.Frozen = true;
-            this.Cuentta.HeaderText = "Cuenta";
-            this.Cuentta.MinimumWidth = 8;
-            this.Cuentta.Name = "Cuentta";
-            this.Cuentta.ReadOnly = true;
-            this.Cuentta.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Cuentta.Width = 60;
-            // 
-            // Nombre
-            // 
-            this.Nombre.Frozen = true;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 8;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Nombre.Width = 150;
-            // 
-            // Año
-            // 
-            this.Año.Frozen = true;
-            this.Año.HeaderText = "Año";
-            this.Año.MinimumWidth = 8;
-            this.Año.Name = "Año";
-            this.Año.ReadOnly = true;
-            this.Año.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Año.Width = 80;
-            // 
-            // Saldo
-            // 
-            this.Saldo.Frozen = true;
-            this.Saldo.HeaderText = "Saldo";
-            this.Saldo.MinimumWidth = 8;
-            this.Saldo.Name = "Saldo";
-            this.Saldo.ReadOnly = true;
-            this.Saldo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Saldo.Width = 80;
-            // 
             // btt_NewCata
             // 
             this.btt_NewCata.Location = new System.Drawing.Point(176, 401);
@@ -250,10 +203,70 @@ namespace ProyectoANF
             this.btt_Razones.UseVisualStyleBackColor = true;
             this.btt_Razones.Click += new System.EventHandler(this.btt_Razones_Click);
             // 
+            // btt_graficar
+            // 
+            this.btt_graficar.Location = new System.Drawing.Point(14, 140);
+            this.btt_graficar.Margin = new System.Windows.Forms.Padding(2);
+            this.btt_graficar.Name = "btt_graficar";
+            this.btt_graficar.Size = new System.Drawing.Size(124, 25);
+            this.btt_graficar.TabIndex = 7;
+            this.btt_graficar.Text = "Grafico";
+            this.btt_graficar.UseVisualStyleBackColor = true;
+            this.btt_graficar.Click += new System.EventHandler(this.btt_graficar_Click);
+            // 
+            // Empresa
+            // 
+            this.Empresa.Frozen = true;
+            this.Empresa.HeaderText = "Empresa";
+            this.Empresa.MinimumWidth = 8;
+            this.Empresa.Name = "Empresa";
+            this.Empresa.ReadOnly = true;
+            this.Empresa.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Empresa.Width = 110;
+            // 
+            // Cuentta
+            // 
+            this.Cuentta.Frozen = true;
+            this.Cuentta.HeaderText = "Cuenta";
+            this.Cuentta.MinimumWidth = 8;
+            this.Cuentta.Name = "Cuentta";
+            this.Cuentta.ReadOnly = true;
+            this.Cuentta.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Cuentta.Width = 200;
+            // 
+            // Nombre
+            // 
+            this.Nombre.Frozen = true;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 8;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Nombre.Width = 8;
+            // 
+            // Año
+            // 
+            this.Año.Frozen = true;
+            this.Año.HeaderText = "Año";
+            this.Año.MinimumWidth = 8;
+            this.Año.Name = "Año";
+            this.Año.ReadOnly = true;
+            this.Año.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Año.Width = 80;
+            // 
+            // Saldo
+            // 
+            this.Saldo.Frozen = true;
+            this.Saldo.HeaderText = "Saldo";
+            this.Saldo.MinimumWidth = 8;
+            this.Saldo.Name = "Saldo";
+            this.Saldo.ReadOnly = true;
+            this.Saldo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Saldo.Width = 80;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(741, 450);
             this.Controls.Add(this.btt_NewCata);
             this.Controls.Add(this.btt_Load);
@@ -266,6 +279,7 @@ namespace ProyectoANF
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cBox_empresa);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
@@ -292,12 +306,13 @@ namespace ProyectoANF
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btt_saveData;
         private System.Windows.Forms.Button btt_Load;
+        private System.Windows.Forms.Button btt_NewCata;
+        private System.Windows.Forms.Button btt_Razones;
+        private System.Windows.Forms.Button btt_graficar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuentta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Año;
         private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
-        private System.Windows.Forms.Button btt_NewCata;
-        private System.Windows.Forms.Button btt_Razones;
     }
 }

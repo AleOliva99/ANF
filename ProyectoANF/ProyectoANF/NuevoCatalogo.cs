@@ -20,6 +20,7 @@ namespace ProyectoANF
             Main = MainF;
         }
 
+
         private void btt_catagPlantilla_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folder = new FolderBrowserDialog();
@@ -34,8 +35,18 @@ namespace ProyectoANF
                 tabla.Columns.Add("Codigo", typeof(string));
                 tabla.Columns.Add("Nombre", typeof(string));
 
-                tabla.Rows.Add();
-                tabla.Rows[tabla.Rows.Count - 1].ItemArray[1] = "ACTIVOS";
+                string Cuentass = "ACTIVOS CORRIENTES,PASIVO CORRIENTE,INVENTARIO,ACTIVOS TOTALES,EFECTIVO,VALORES DE CORTO PLAZO,COSTO DE LAS VENTAS,INVENTARIO PROMEDIO," +
+                    "VENTAS NETAS,PROMEDIO CUENTAS POR COBRAR COMERCIALES,COMPRAS,PROMEDIO CUENTAS POR PAGAR COMERCIALES,VENTAS TOTALES,ACTIVO TOTAL PROMEDIO,ACTIVO FIJO NETO PROMEDIO,UTILIDAD BRUTA,VENTAS,PASIVO TOTAL,ACTIVO TOTAL,PATRIIMONIO,PATRIMONIO TOTAL,UTILIDADES ANTES DE INTERESES E IMPUESTOS,GASTOS FINANCIEROS,UTILIDAD NETA," +
+                    "PATRIMONIO PROMEDIO,NUMERO DE ACCIONES,INGRESOS,INVERSION";
+
+                string[] cuentasImportantes = Cuentass.Split(',')  ;
+
+                for(int i = 0; i < cuentasImportantes.Length; i++)
+                {
+                    tabla.Rows.Add(archivo.GetCellValueAsInt32(1, 1));
+                    tabla.Rows[i][0] = "000" + i.ToString();
+                    tabla.Rows[i][1] = cuentasImportantes[i];
+                }
 
                 archivo.ImportDataTable(1, 1, tabla, true);
                 bool cop = false;
