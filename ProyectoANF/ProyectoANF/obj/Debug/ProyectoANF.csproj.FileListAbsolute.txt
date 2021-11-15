@@ -287,3 +287,4 @@ C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoA
 C:\Users\gabri\Desktop\UES\ANF\PROYECTO\proyecto-anf\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.GuardandoDatos.resources
 C:\Users\gabri\Desktop\UES\ANF\PROYECTO\proyecto-anf\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.NuevoCatalogo.resources
 C:\Users\gabri\Desktop\UES\ANF\PROYECTO\proyecto-anf\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.Razones.resources
+C:\Users\MINEDUCYT\Desktop\Oliva\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.Grafico.resources

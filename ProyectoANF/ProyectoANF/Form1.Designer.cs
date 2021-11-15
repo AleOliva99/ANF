@@ -57,8 +57,10 @@ namespace ProyectoANF
             // 
             this.tBox_password.Location = new System.Drawing.Point(36, 156);
             this.tBox_password.Name = "tBox_password";
+            this.tBox_password.PasswordChar = '*';
             this.tBox_password.Size = new System.Drawing.Size(176, 20);
             this.tBox_password.TabIndex = 3;
+            this.tBox_password.UseSystemPasswordChar = true;
             // 
             // label2
             // 

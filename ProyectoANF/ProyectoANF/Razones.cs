@@ -62,7 +62,7 @@ namespace ProyectoANF
                 ));
 
             NewRowA("Razón de efectivo", Valid(
-                (Values("EFECTIVO") + Values("VALORES DE CORTO PLAZO")) / Values("PASIVOS CORRIENTES")
+                (Values("EFECTIVO") + Values("VALORES DE CORTO PLAZO")) / Values("PASIVO CORRIENTE")
                 ));
 
             NewRowA("Razón de Rotación de Inventario", Valid(
@@ -129,7 +129,7 @@ namespace ProyectoANF
                 ));
 
             NewRowA("Rentabilidad sobre ventas", Valid(
-                Values("UTILIDAD NETA")/Values("VENTA")
+                Values("UTILIDAD NETA")/Values("VENTAS")
                 ));
             NewRowA("Rentabilidad sobre inversion", Valid(
                 (Values("INGRESOS") - Values("INVERSION"))/ Values("INVERSION")
@@ -152,7 +152,7 @@ namespace ProyectoANF
                 ));
 
             NewRowB("Razón de efectivo", Valid(
-                (ValuesB("EFECTIVO") + ValuesB("VALORES DE CORTO PLAZO")) / ValuesB("PASIVOS CORRIENTES")
+                (ValuesB("EFECTIVO") + ValuesB("VALORES DE CORTO PLAZO")) / ValuesB("PASIVO CORRIENTE")
                 ));
 
             NewRowB("Razón de Rotación de Inventario", Valid(
@@ -219,7 +219,7 @@ namespace ProyectoANF
                 ));
 
             NewRowB("Rentabilidad sobre ventas", Valid(
-                ValuesB("UTILIDAD NETA") / ValuesB("VENTA")
+                ValuesB("UTILIDAD NETA") / ValuesB("VENTAS")
                 ));
             NewRowB("Rentabilidad sobre inversion", Valid(
                 (ValuesB("INGRESOS") - ValuesB("INVERSION")) / ValuesB("INVERSION")

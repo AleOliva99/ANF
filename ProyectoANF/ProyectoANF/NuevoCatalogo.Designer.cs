@@ -29,8 +29,10 @@ namespace ProyectoANF
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoCatalogo));
             this.btt_catagPlantilla = new System.Windows.Forms.Button();
             this.btt_catagLoad = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btt_catagPlantilla
@@ -53,16 +55,27 @@ namespace ProyectoANF
             this.btt_catagLoad.UseVisualStyleBackColor = true;
             this.btt_catagLoad.Click += new System.EventHandler(this.btt_catagLoad_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(312, 65);
+            this.label1.TabIndex = 2;
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
             // NuevoCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 273);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btt_catagLoad);
             this.Controls.Add(this.btt_catagPlantilla);
             this.Name = "NuevoCatalogo";
             this.Text = "NuevoCatalogo";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -70,5 +83,6 @@ namespace ProyectoANF
 
         private System.Windows.Forms.Button btt_catagPlantilla;
         private System.Windows.Forms.Button btt_catagLoad;
+        private System.Windows.Forms.Label label1;
     }
 }

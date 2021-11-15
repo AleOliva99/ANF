@@ -374,5 +374,22 @@ namespace ProyectoANF
             }
             razones.BringToFront();
         }
+
+        Grafico grafico;
+        private void btt_graficar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (grafico == null)
+                    grafico = new Grafico(this);
+                grafico.Show();
+            }
+            catch
+            {
+                grafico = new Grafico(this);
+                grafico.Show();
+            }
+            grafico.BringToFront();
+        }
     }
 }
