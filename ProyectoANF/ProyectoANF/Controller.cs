@@ -1086,7 +1086,7 @@ namespace ProyectoANF
                 else if((A - B) == 0)
                     caso = 3;
                 string res = string.Empty;
-                MySqlCommand comando = new MySqlCommand("SELECT * FROM comportamiento WHERE id = " + caso, Conexion);
+                MySqlCommand comando = new MySqlCommand("SELECT * FROM Comportamiento WHERE id = " + caso, Conexion);
                 MySqlDataReader data = comando.ExecuteReader();
                 if(data.Read())
                 {
