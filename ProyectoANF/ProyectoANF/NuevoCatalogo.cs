@@ -113,7 +113,7 @@ namespace ProyectoANF
                         {
                             cuenta = float.Parse(values[0].ToString()),
                             nombre = values[1].ToString().ToUpper(),
-                            empresa = Main.GetUser().empresa
+                            empresa = Main.GetEmpresaUser()
                         });
                         column = 1;
                         row++;

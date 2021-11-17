@@ -322,6 +322,11 @@ namespace ProyectoANF
             
         }
 
+        public Empresa GetEmpresaUser()
+        {
+            return Controller.GetEmpresa(cBox_empresa.Text);
+        }
+
         NuevoCatalogo newCata;
         private void btt_NewCata_Click(object sender, EventArgs e)
         {
