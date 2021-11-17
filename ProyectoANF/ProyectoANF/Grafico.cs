@@ -31,7 +31,7 @@ namespace ProyectoANF
                 {
                     series[i - start] = (start + (i - start)).ToString("0000");
                 }
-                int CuentaId = Controller.GetCatalogo(tBox_cuenta.Text.ToUpper(), MainF.GetUser().empresa.id).id;
+                int CuentaId = Controller.GetCatalogo(tBox_cuenta.Text.ToUpper(), MainF.GetEmpresaUser().id).id;
                 if (CuentaId != -1)
                 {
                     float[] puntos = new float[series.Length];

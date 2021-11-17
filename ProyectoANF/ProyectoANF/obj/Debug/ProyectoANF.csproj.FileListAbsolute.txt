@@ -431,6 +431,5 @@ C:\Users\mikeo\Desktop\Ale\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.Raz
 C:\Users\mikeo\Desktop\Ale\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.SelectExcel.resources
 C:\Users\mikeo\Desktop\Ale\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.csproj.GenerateResource.cache
 C:\Users\mikeo\Desktop\Ale\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.csproj.CoreCompileInputs.cache
-C:\Users\mikeo\Desktop\Ale\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.csproj.CopyComplete
 C:\Users\mikeo\Desktop\Ale\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.exe
 C:\Users\mikeo\Desktop\Ale\ANF\ProyectoANF\ProyectoANF\obj\Debug\ProyectoANF.pdb
